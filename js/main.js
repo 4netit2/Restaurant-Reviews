@@ -161,6 +161,7 @@ createRestaurantHTML = (restaurant) => {
 
   const image = document.createElement('img');
   image.className = 'restaurant-img';
+  image.alt = restaurant.name;     /*added alt to images for accesibility*/
   image.src = DBHelper.imageUrlForRestaurant(restaurant);
   li.append(image);
 
@@ -179,7 +180,8 @@ createRestaurantHTML = (restaurant) => {
   const more = document.createElement('a');
   more.innerHTML = 'View Details';
   more.href = DBHelper.urlForRestaurant(restaurant);
-  li.append(more)
+  li.append(more);
+  more.setAttribute('aria-label', 'View Details');
 
   return li
 }
@@ -210,5 +212,19 @@ addMarkersToMap = (restaurants = self.restaurants) => {
   });
 } 
 
-//Add service worker here
+//Added service worker      
 
+if ('serviceWorker' in navigator) {
+   navigator.serviceWorker.register('./sw.js').then(reg => {
+      console.log('S. Worker registered');
+      if (reg.installing) {
+          console.log('S. Worker installing');
+      }
+      if (reg.waiting) {
+          console.log('S. Worker is waiting');
+      }
+      if (reg.active) {
+          console.log('S. Worker is active');
+      }
+  });
+}
