@@ -17,6 +17,17 @@ ul, li {
 	font-size: 10pt;
 	color: #333;
 }
+
+.skip-link {             /*add css for skip-link  */
+  position: absolute;
+  top: -40px;
+  left: 0;
+
+}
+
+.skip-link:focus{     /*sudo class */
+  top:0 ; 
+}
 a {
 	color: orange;
 	text-decoration: none;
@@ -51,12 +62,14 @@ article, aside, canvas, details, figcaption, figure, footer, header, hgroup, men
 /* ====================== Navigation ====================== */
 nav {
   width: 100%;
-  height: 80px;
+  height: 60px;
   background-color: #252831;
   text-align:center;
+  
 }
 nav h1 {
   margin: auto;
+  padding: 14px;
 }
 nav h1 a {
   color: #fff;
@@ -109,6 +122,8 @@ nav h1 a {
   height: 50px;
   background-color: #3397DB;
   align-items: center;
+  display: flex;
+  flex-flow: wrap;
 }
 .filter-options h2 {
   color: white;
@@ -136,6 +151,10 @@ nav h1 a {
   margin: 0;
   padding: 30px 15px 60px;
   text-align: center;
+  display: flex;       /*made some modification */
+  flex-flow: wrap;
+  justify-content: center;
+
 }
 #restaurants-list li {
   background-color: #fff;
@@ -143,9 +162,10 @@ nav h1 a {
   font-family: Arial,sans-serif;
   margin: 15px;
   min-height: 380px;
-  padding: 0 30px 25px;
+  padding: 15px;         /*made some modification */
   text-align: left;
   width: 270px;
+  
 }
 #restaurants-list .restaurant-img {
   background-color: #ccc;
@@ -194,8 +214,8 @@ nav h1 a {
   height: 87%;
   position: fixed;
   right: 0;
-  top: 80px;
-  width: 50%;
+  top: 30px; 
+  width: 48%;
 }
 .inside #map {
   background-color: #ccc;
@@ -205,7 +225,7 @@ nav h1 a {
 .inside #footer {
   bottom: 0;
   position: absolute;
-  width: 50%;
+  width: 100%;
 }
 #restaurant-name {
   color: #f18200;
@@ -263,7 +283,7 @@ nav h1 a {
   list-style-type: none;
   margin: 0 0 30px;
   overflow: hidden;
-  padding: 0 20px 20px;
+  padding: 10px 15px 20px;
   position: relative;
   width: 85%;
 }
@@ -272,4 +292,58 @@ nav h1 a {
 }
 #restaurant-hours td {
   color: #666;
+}
+
+
+
+@media screen and (max-width: 768px) {
+  nav h1, #restaurant-name {
+    font-size: small;
+    padding: 8px;
+  }
+  
+  filter-options h2 {
+    display: none;
+  }
+
+  .inside #map-container {
+    width: 100%;
+    height: 360px;
+    position: relative;
+    top: 130px;
+  }
+
+  #restaurant-container {
+    width: 80%;
+    margin: auto;
+    text-align: center;
+  }
+  #reviews-container {
+    padding: 30px 0px 80px;
+    width: 100%;
+  }
+
+  #reviews-container h2 {
+    text-align: center;
+    
+  }
+  #breadcrumb {
+    width: auto;
+  }
+  #restaurant-hours {
+    margin: auto;
+}
+  #reviews-list {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      width: 100%;
+  }
+  #restaurant-cuisine {
+   display: none;
+  }
+  #footer {
+    font-size: 10px;
+		width: 100% !important;  /*add priority */
+  }
 }
