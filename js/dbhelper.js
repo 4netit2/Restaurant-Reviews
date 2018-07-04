@@ -8,9 +8,9 @@ class DBHelper {
    * Change this to restaurants.json file location on your server.
    */
   static get DATABASE_URL() {
-    //     const port = 80 Change this to your server port
-    //       return `./data/restaurants.json`;
-    return `https://4netit2.github.io/Restaurant-Reviews/data/restaurants.json`;
+           const port = 5500 //Change this to your server port
+           return `./data/restaurants.json`;
+    
    }
 
   /**
