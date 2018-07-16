@@ -234,15 +234,7 @@ nav h1 a {
   width: 100%;
 }
 
-#reviews-list p:nth-child(-n+3),
-  p:nth-child(3n) {
-    font-weight: bold;
-  }
-
-#reviews-list p:nth-child(3n){
-  text-align-last: right;
-}
-  
+ 
 #restaurant-name {
   color: #f18200;
   font-family: Arial,sans-serif;
@@ -306,6 +298,15 @@ nav h1 a {
 #reviews-list li p {
   margin: 0 0 10px;
 }
+
+#reviews-list p:nth-child(-n+3),p:nth-child(3n) {
+    font-weight: bold;
+  }
+
+#reviews-list p:nth-child(3n){
+  text-align-last: right;
+}
+
 #restaurant-hours td {
   color: #666;
 }
