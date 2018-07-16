@@ -83,6 +83,7 @@ nav h1 a {
   font-weight: 200;
   letter-spacing: 10px;
   text-transform: uppercase;
+ 
 }
 #breadcrumb {
     padding: 10px 40px 16px;
@@ -178,8 +179,9 @@ nav h1 a {
   display: block;
   margin: 0;
   max-width: 100%;
-  min-height: 248px;
+  /* min-height: 248px; */
   min-width: 100%;
+  
 }
 #restaurants-list li h1 {
   color: #f18200;
@@ -317,7 +319,7 @@ nav h1 a {
 @media screen and (max-width: 748px) {
   nav h1, #restaurant-name {
     font-size: small;
-    padding: 8px 45px 10px 0px;
+    padding: 8px 45px 0px 30px;
     
     
   }
@@ -356,6 +358,14 @@ nav h1 a {
     text-align: center;
     
   }
+
+  #restaurant-img {
+    /* height: 50%; */
+    /* width: 0%; */
+    max-width: 100%;
+    min-width: 100%;
+  }
+
   #breadcrumb {
     width: auto;
   }
