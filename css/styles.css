@@ -234,7 +234,7 @@ nav h1 a {
   width: 100%;
 }
 
- 
+  
 #restaurant-name {
   color: #f18200;
   font-family: Arial,sans-serif;
@@ -299,7 +299,8 @@ nav h1 a {
   margin: 0 0 10px;
 }
 
-#reviews-list p:nth-child(-n+3),p:nth-child(3n) {
+#reviews-list p:nth-child(-n+3),
+  p:nth-child(3n) {
     font-weight: bold;
   }
 
@@ -316,7 +317,9 @@ nav h1 a {
 @media screen and (max-width: 748px) {
   nav h1, #restaurant-name {
     font-size: small;
-    padding: 8px;
+    padding: 8px 45px 10px 0px;
+    
+    
   }
   
   
@@ -332,6 +335,10 @@ nav h1 a {
     height: 360px;
     position: relative;
     top: 130px;
+  }
+
+  #restaurant-cuisine {
+    margin: 0px 0px 11px 15px;
   }
 
   #restaurant-container {
