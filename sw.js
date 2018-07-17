@@ -1,4 +1,4 @@
-const currentCache = 'review-cache-v1';  // static/current cache
+var currentCache = 'restaurant-cache-v1';  // static/current cache
 
 let linksCached = [          //caching files
     './',
@@ -10,25 +10,39 @@ let linksCached = [          //caching files
     './js/dbhelper.js',
     './data/restaurants.json',
     './js/restaurant_info.js',
+    './restaurant.html?id=1'
     
 ];
 
 
 self.addEventListener('install', function(event) {
+    console.log('SW install');
     event.waitUntil(
-        caches.open(currentCache)
-          .then( (cache) => {
-              console.log(cache);
+        caches.open(currentCache).then( (cache) => {
+              console.log('SW caching app');
               return cache.addAll(linksCached);
           })
       );
 });
 
+
+//activate service worker
+self.addEventListener('activate', function (event) {
+    console.log('SW activate');
+    event.waitUntil(
+        caches.keys().then(function (cacheNames) {
+            return Promise.all(cacheNames.map(function(cached) {
+                if (currentCache.indexOf(cached) === -1) { return caches.delete(cached);
+                }
+              }));
+            })
+        );
+});
+
 // fetch event and return cache if contains something
 self.addEventListener('fetch', (event) => {
-    event.respondWith(
-      caches.match(event.request).then((response) => {
-          return response || fetch(event.request);
+    event.respondWith(caches.match(event.request).then((response) => {
+        return response || fetch(event.request);
         })
     );
   });
